@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lens & Light</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .about{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+body {
+    font-family: 'Playfair Display', serif; /* Элегантный шрифт с засечками */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #bcbbbb; /* Светло-серый фон */
+}
+
+/* Header */
+header {
+    background-image: url("fotostudia-image.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Для эффекта параллакса */   
+    background-image: url("../img/fon.jpg");
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.bl{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: space-around;
+}
+.logo {
+    font-size: 2em;
+    font-weight: 700;
+    text-decoration: none;
+    color: #f0da4fdb;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 1.1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav a:hover {
+    color: #f0da4f9e;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.hero p {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.hero button {
+    background-color: #f0db4f;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero button:hover {
+    background-color: #c7b23f;
+}
+
+/* Main */
+main {
+  padding: 50px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: center; /* Заголовки по центру */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.menu-items {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет блокам переноситься на новую строку */
+    justify-content: space-around; /* Равномерное распределение блоков */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.menu-item {
+    width: 300px; /* Ширина блока фото */
+    margin: 20px;
+    border: 1px solid #ddd; /* Тонкая серая рамка */
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Тень */
+    text-align: center; /* Текст по центру */
+    background-color: #f8f8f8;
+    border-radius: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.menu-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.menu-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.menu-item p {
+    margin-bottom: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.menu-item .price {
+    font-weight: bold;
+}
+#registrationForm{
+    width: 50%;
+    border-radius: 30px;
+    background-color: #e0dada;
+}
+#zapisinput{
+    width: 290px;
+    height: 30px;
+    border-radius: 10px;
+    border: 0;
+    padding-left: 20px;
+}
+select{
+    height: 30px;
+    border-radius: 10px;
+    border: 0;
+    padding-left: 20px;
+}
+textarea{/*ТУТА ТЕКСТОВОЕ ПОЛЕ*/
+    width: 290px;
+    height: 30px;
+    border-radius: 10px;
+    border: 0;
+    padding-left: 20px;
+    padding-top: 15px;
+}
+#zapissubm{
+    width: 250px;
+    height: 60px;
+    margin-bottom: 20px;
+    border: 0;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">Lens & Light</a>
+            <ul>
+                <li><a href="index.html">Главне меню</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#title">Услуги</a></li>
+                <li><a href="#you">Галерея работ</a></li>
+                <li><a href="#zapisatsanauslugu">Запись на услугу</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+
+            <h1>Добро пожаловать в нашу Фотостудию!</h1>
+            <p>Создайте воспоминания на всю жизнь.</p>
+          
+        </div>
+    </header>
+
+    <main>
+        <section class="about" id="about">
+            <h2>О нас</h2>
+            <p align = "justify"><big>Жить на 100%! Создавать прекрасное. Вдохновлять. Все это и многое другое мы — фотостудия Lens & Light. В нашем портфолио большой опыт работы с крупнейшими компаниями и печатными СМИ, а также сотрудничество с известными мировыми брендами. Мы проводим рекламные и персональные съемки, смело беремся за сложные задачи и создаем невероятные проекты. Вы привыкли работать только с профессионалами, выбирать лучшее и не боитесь смелых импровизаций? Тогда мы нашли друг друга. Мы не ищем примитивных путей. Мы привыкли впечатлять наших клиентов. Мы уверены, что сможем впечатлить и Вас!</big></p>
+            <!-- Здесь можно добавить информацию о фотостудии -->
+        </section>
+        <section class="menu" >
+            <h2 id="title">Наши услуги</h2>
+            
+
+            <div class="menu-items">
+
+                <div class="menu-item">
+                    <img src="./img/family.jpg" alt="Семейная фотосессия">
+                    <h3>Семейная фотосессия</h3>
+                    <p>Фото в стиле "Мама, папа и ребёнок" выполняются как в фотостудии, так и по пожеланиям клиента на природе или в доме заказчика.</p>
+                    <p class="price">Цена: от 3000 тыс.руб.</p>
+                </div>
+
+                <div class="menu-item">
+                    <img src="./img/biznes.jpg" alt="Съёмка для бизнеса">
+                    <h3>Съёмка для бизнеса</h3>
+                    <p>Рекламные материалы, брендовые фотографии.</p>
+                    <p class="price">Цена: от 6000 тыс.руб.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="./img/svadba.jpg" alt="Свадебная фотосессия">
+                    <h3>Свадебная фотосессия</h3>
+                    <p>Полный цикл услуг от подготовки до обработки фотографий.</p>
+                    <p class="price">Цена: от 8000 тыс.руб.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="./img/post.jpg" alt="Постобработка фотографий">
+                    <h3>Постобработка фотографий</h3>
+                    <p>Услуги по обработке и ретуши снимков, создание фотокниг и альбомов.</p>
+                    <p class="price">Цена: от 100 руб.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="./img/doc.jpg" alt="Докуметальное фото">
+                    <h3>Докуметальное фото</h3>
+                    <p>Фотографии на паспорт, загранпаспорт, различные удостоверения, фото при поступлении в высшие учебные заведения и другие.</p>
+                    <p class="price">Цена: от 200 руб.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="./img/video.jpg" alt="Видеосъёмка">
+                    <h3>Видеосъёмка</h3>
+                    <p>Включает в себя разработку идеи, сбор команды, написание сценария, составление плана, подготовка оборудования и реквизита, а также съёмку и монтаж.</p>
+                    <p class="price">Цена: от 5000 тыс.руб.</p>
+                </div>
+
+                <!-- Добавьте больше блоков .menu-item для других услуг -->
+
+            </div>
+        </section>
+<head>
+         <section class="about" id="you">
+            <h2>Галерея работ</h2>
+             <div class="bl">
+                <img src="./img/4.jpg" width="300" height="420" alt="Коллаж (фото мужчины)">
+                <img src="./img/13.jpg" width="300" height="420" alt="Коллаж (гендерпати)">
+                <img src="./img/3.jpg" width="300" height="420" alt="Коллаж (фото девушки)">
+            </div>
+            <div class="bl">
+                <img src="./img/6.jpg" width="300" height="420" alt="Коллаж (фото девушки)">
+                <img src="./img/5.jpg" width="300" height="420" alt="Коллаж (день рождения)">
+                <img src="./img/14.jpg" width="300" height="420" alt="Фото девушки">
+            </div>
+            <div class="bl">
+                <img src="./img/7.jpg" width="300" height="420" alt="Фото девушки (день рождения)">
+                <img src="./img/10.jpg" width="300" height="420" alt="Свадебная фотография">
+                <img src="./img/9.jpg" width="300" height="420" alt="Коллаж (свадебная фотосессия)">
+            </div>
+            <div class="bl">
+                <img src="./img/8.jpg" width="300" height="420" alt="Коллаж (гендерпати)">
+                <img src="./img/11.jpg" width="300" height="420" alt="Семейная фотография">
+                <img src="./img/12.jpg" width="300" height="420" alt="Фото гендерпати">
+            </div>
+            <div class="bl">
+                <img src="./img/19.jpg" width="300" height="420" alt="Фото (школьная фотосессия) ">
+                <img src="./img/1.jpg" width="300" height="420" alt="Коллаж (фото девушек)">
+                <img src="./img/15.jpg" width="300" height="420" alt="Фото (школьная фотосессия)">
+                
+            </div>
+            <div class="bl">
+                <img src="./img/21.jpg" width="300" height="420" alt="Семейная фотография">
+                <img src="./img/17.jpg" width="300" height="420" alt="Школьное фото девушки">
+                <img src="./img/20.jpg" width="300" height="420" alt="Семейная фотография">
+                
+            </div>
+            <div class="bl">
+                <img src="./img/16.jpg" width="300" height="420" alt="Коллаж (школьная фотосессия)">
+                <img src="./img/18.jpg" width="300" height="420" alt="Школьное фото девушки">
+                <img src="./img/2.jpg" width="300" height="420" alt="Коллаж (фото девушки)">
+                
+            </div>
+            <!-- Здесь можно добавить информацию о фотостудии -->
+
+        </section>
+        <script>
+            function showMessage(event) {
+                event.preventDefault(); // предотвратить отправку формы
+                document.getElementById('response').innerText = "Данные отправлены";
+                document.getElementById('registrationForm').reset(); // сбросить форму
+            }
+        </script>
+    </head>
+   
+        
+        <center><form id="registrationForm" onsubmit="showMessage(event)">
+            <center><h1 id="zapisatsanauslugu">Записаться на услугу</h1></center>
+            <label>Выберите услугу:</label><br>
+            <select name="service" required>
+                <option value="семейная фотосессия">Семейная фотосессия (от 3000 рублей)</option>
+                <option value="съемка для бизнеса">Съемка для бизнеса (от 6000 рублей)</option>
+                <option value="свадебная фотосессия">Свадебная фотосессия (от 8000 рублей)</option>
+                <option value="постобработка фотографий">Постобработка фотографий (от 100 рублей)</option>
+                <option value="документальное фото">Документальное фото (от 200 рублей)</option>
+                <option value="видеосъемка">Видеосъемка (от 5000 рублей)</option>
+            </select><br><br>
+    
+            <label>Выберите дату:</label><br>
+            <input type="date" name="date" id="zapisinput" required><br><br>
+    
+            <label>Выберите время:</label><br>
+            <input type="time" name="time" id="zapisinput1" required><br><br>
+    
+            <label>Ваше имя:</label><br>
+            <input type="text" name="name" id="zapisinput2" required><br><br>
+    
+            <label>Контактный номер:</label><br>
+            <input type="tel" name="phone" id="zapisinput3" required><br><br>
+    
+            <label>Электронная почта:</label><br>
+            <input type="email" name="email" id="zapisinput4" required><br><br>
+    
+            <label>Комментарий:</label><br>
+            <textarea name="comment"></textarea><br><br>
+    
+            <input type="submit" value="Отправить" id="zapissubm">
+        </form>
+        <div id="response" style="color: green; margin-top: 20px;"></div></center>
+
+
+        <section class="contact" id="contact">
+            <h2>Контакты</h2>
+            <p>Название студии: Фотостудия «Lens_&_Light»<br>
+                Адрес: ул. Некрасова, д. 7, Тула, Россия<br>
+                Телефон: +7 (910) 165-65-69<br>
+                Электронная почта: info.Lens & Light@gmail.com<br>
+                Часы работы:<br>
+                Пн - Пт: с 10:00 до 20:00<br>
+                Сб: 11:00 — 18:00<br>
+                Вс: Выходной<br>
+                Следите за нами в соцсетях:<br>
+                Instagram: @Lens_&_Light<br>
+                Facebook: Фотостудия Lens_&_Light<br>
+                Мы будем рады помочь вам создать незабываемые моменты!
+            </p>
+            <!-- Здесь можно добавить контактную информацию -->
+             
+        </section>
+    </main>
+
+
+    <footer>
+        <p>&copy; 2025 Lens & Light. Все права защищены.</p>
+    </footer>
+</body>
+</html>
